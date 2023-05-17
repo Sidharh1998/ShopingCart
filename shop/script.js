@@ -27,6 +27,11 @@ console.log(cart);
 currentUser.cart=cart
 console.log(currentUser);
  count++;
+
+ if(cart.length>0){
+  document.querySelector(".cart-item").style.color="red";
+}
+
  localStorage.setItem("currentUser",JSON.stringify(currentUser))
 }
 
@@ -36,6 +41,12 @@ console.log(currentUser);
 // ------------------showproduct
 function  showProduct(product) {
  
+
+  if(cart.length===0){
+    document.querySelector(".cart-item").style.color="white";
+  }
+
+
   for(let i=0;i<product.length;i++){
 
     randomColor[0] = color[Math.floor(Math.random() * color.length)];
@@ -325,7 +336,3 @@ document.querySelector(".filter-women").addEventListener("click",()=>{
         document.querySelector(".electronics").style.display="flex"
       })
   
-
-      if(cart!=[]){
-        document.querySelector(".cart-item").style.color="red";
-      }
