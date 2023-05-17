@@ -20,6 +20,8 @@ let fetchProducts= fetch('https://fakestoreapi.com/products')
 let currentUser=JSON.parse(localStorage.getItem("currentUser"))
 let count=0;
 function clicked(id){
+
+  alert("Product Added To Cart")
   cart[count]=product[id-1] 
 console.log(cart);
 currentUser.cart=cart
@@ -33,7 +35,7 @@ console.log(currentUser);
 
 // ------------------showproduct
 function  showProduct(product) {
-  console.log("HII")
+ 
   for(let i=0;i<product.length;i++){
 
     randomColor[0] = color[Math.floor(Math.random() * color.length)];
@@ -323,3 +325,7 @@ document.querySelector(".filter-women").addEventListener("click",()=>{
         document.querySelector(".electronics").style.display="flex"
       })
   
+
+      if(cart!=[]){
+        document.querySelector(".cart-item").style.color="red";
+      }

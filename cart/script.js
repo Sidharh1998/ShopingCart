@@ -6,6 +6,7 @@ console.log(product);
 showProducts(product);
 
  function showProducts(product){
+  
   total=0
   document.querySelector(".product-section").innerHTML=''
   for(let i=0;i<product.length;i++){
@@ -41,7 +42,7 @@ document.querySelector(".checkout").innerHTML=""
 for(let i=0;i<product.length;i++){
   document.querySelector(".checkout").innerHTML+=`
   <div class="each-product" id="${product[i].id}">
-  <div>${i}.${product[i].title}</div>
+  <div>${i+1}.${product[i].title}</div>
   <div>$${product[i].price}</div>
   </div>
   <br>
@@ -54,7 +55,8 @@ for(let i=0;i<product.length;i++){
 for(let i=0;i<product.length;i++){
   total+=product[i].price
   }
-  console.log(total);
+  total=total.toFixed(2)
+
   
   document.querySelector(".checkout").innerHTML+=`
   <div class"total">
@@ -82,8 +84,8 @@ function razerpay() {
 
  function clicked(id){
 
-
-console.log(product.splice(id,id))
+console.log(id)
+console.log(product.splice(id,1))
 console.log(product)
 
 
