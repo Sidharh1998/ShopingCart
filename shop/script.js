@@ -1,9 +1,7 @@
 let cart=[]
-let randomColor=[];
+
 let product;
-let color=["red","blue","green","black","yellow"]
-let randomSize=[]
-let size=["S","M","L","X","XL"]
+
 let fetchProducts= fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(json=>{
@@ -49,12 +47,7 @@ function  showProduct(product) {
 
   for(let i=0;i<product.length;i++){
 
-    randomColor[0] = color[Math.floor(Math.random() * color.length)];
-    randomColor[1] = color[Math.floor(Math.random() * color.length)];
-    randomColor[2] = color[Math.floor(Math.random() * color.length)];
-    randomSize[0]=  size[Math.floor(Math.random() * size.length)];
-    randomSize[1]=  size[Math.floor(Math.random() * size.length)];
-    randomSize[2]=  size[Math.floor(Math.random() * size.length)];
+   
    if(product[i].category=="men's clothing")
    {
     
@@ -68,16 +61,9 @@ function  showProduct(product) {
      <div class="row">
    
           <div class="price">Price: $${product[i].price}</div>
-         <div class="sized">Size:${randomSize[0]},${randomSize[1]},${randomSize[2]}</div>
+         
        </div>
-       <div class="colors">
-         Colors:
-         <div class="row">
-           <div class="circle" style="background-color:${randomColor[0]}"></div>
-           <div class="circle" style="background-color:${randomColor[1]}"></div>
-           <div class="circle" style="background-color: ${randomColor[2]}"></div>
-         </div>
-       </div>
+        <br/>
        <div class="row">Rating:${product[i].rating.rate}</div>
      </div>
      <button onclick="clicked(${product[i].id})" class="cart-btn" id="addBtn${product[i].id}">Add to Cart</button>
@@ -91,23 +77,16 @@ function  showProduct(product) {
      <img style="height:200px; " src=${product[i].image} />
      <div class="info">
      <div class="title">${product[i].title}</div>
-     <br>    
+     <br>   
      <div class="row">
-     
+   
           <div class="price">Price: $${product[i].price}</div>
-         <div class="sized">Size: ${randomSize[0]},${randomSize[1]},${randomSize[2]}</div>
+         
        </div>
-       <div class="colors">
-         Colors:
-         <div class="row">
-           <div class="circle" style="background-color: ${randomColor[0]}"></div>
-           <div class="circle" style="background-color: ${randomColor[1]}"></div>
-           <div class="circle" style="background-color: ${randomColor[2]}"></div>
-         </div>
-       </div>
+        <br/>
        <div class="row">Rating:${product[i].rating.rate}</div>
      </div>
-     <button class="cart-btn" onclick="clicked(${product[i].id})" id="addBtn${product[i].id}">Add to Cart</button>
+     <button onclick="clicked(${product[i].id})" class="cart-btn" id="addBtn${product[i].id}">Add to Cart</button>
    </div>
      `
    }
@@ -118,23 +97,16 @@ function  showProduct(product) {
      <img style="height:200px; " src=${product[i].image} />
      <div class="info">
      <div class="title">${product[i].title}</div>
-     <br>    
+     <br>   
      <div class="row">
-     
+   
           <div class="price">Price: $${product[i].price}</div>
-         <div class="sized">Size: ${randomSize[0]},${randomSize[1]},${randomSize[2]}</div>
+         
        </div>
-       <div class="colors">
-         Colors:
-         <div class="row">
-           <div class="circle" style="background-color: ${randomColor[0]}"></div>
-           <div class="circle" style="background-color: ${randomColor[1]}"></div>
-           <div class="circle" style="background-color:${randomColor[2]}"></div>
-         </div>
-       </div>
+        <br/>
        <div class="row">Rating:${product[i].rating.rate}</div>
      </div>
-     <button class="cart-btn" onclick="clicked(${product[i].id})" id="addBtn${product[i].id}">Add to Cart</button>
+     <button onclick="clicked(${product[i].id})" class="cart-btn" id="addBtn${product[i].id}">Add to Cart</button>
    </div>
      `
    }
@@ -147,21 +119,14 @@ function  showProduct(product) {
      <div class="title">${product[i].title}</div>
      <br>   
      <div class="row">
-     
+   
           <div class="price">Price: $${product[i].price}</div>
-         <div class="sized">Size: ${randomSize[0]},${randomSize[1]},${randomSize[2]}</div>
+         
        </div>
-       <div class="colors">
-         Colors:
-         <div class="row">
-           <div class="circle" style="background-color:${randomColor[0]}"></div>
-           <div class="circle" style="background-color: ${randomColor[1]}"></div>
-           <div class="circle" style="background-color: ${randomColor[2]}"></div>
-         </div>
-       </div>
+        <br/>
        <div class="row">Rating:${product[i].rating.rate}</div>
      </div>
-     <button class="cart-btn" onclick="clicked(${product[i].id})" id="addBtn${product[i].id}">Add to Cart</button>
+     <button onclick="clicked(${product[i].id})" class="cart-btn" id="addBtn${product[i].id}">Add to Cart</button>
    </div>
      `
  
